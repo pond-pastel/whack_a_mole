@@ -1,0 +1,250 @@
+:root {
+    --mole-color: #603800;
+    --grass-color: #0a8000;
+    color: white;
+    background: var(--grass-color);
+    font-family: sans-serif;
+}
+
+@media (orientation: landscape) {
+    .mole {
+        bottom: 10vh;
+        width: 15vw;
+        &:has(.mole-checkbox:checked) {
+            height: 15vw;
+        }
+    }
+    
+    .ground {
+        width: 20vw;
+        height: 10vh;
+        &:nth-child(-n+3) {
+            top: 35vh;
+        }
+        &:nth-child(n+4) {
+            top: 85vh;
+        }
+        &:nth-child(1) {
+            left: 7vw;
+        }
+        &:nth-child(2) {
+            left: 40vw;
+        }
+        &:nth-child(3) {
+            left: 72vw;
+        }
+        &:nth-child(4) {
+            left: 20vw;
+        }
+        &:nth-child(5) {
+            left: 60vw;
+        }
+    }
+}
+
+@media (orientation: portrait) {
+    .mole {
+        bottom: 5vh;
+        width: 20vw;
+        &:has(.mole-checkbox:checked) {
+            height: 20vw;
+        }
+    }
+
+    .ground {
+        width: 25vw;
+        height: 5vh;
+        &:nth-child(-n+3) {
+            top: 40vh;
+        }
+        &:nth-child(n+4) {
+            top: 60vh;
+        }
+        &:nth-child(1) {
+            left: 4vw;
+        }
+        &:nth-child(2) {
+            left: 37vw;
+        }
+        &:nth-child(3) {
+            left: 70vw;
+        }
+        &:nth-child(4) {
+            left: 17vw;
+        }
+        &:nth-child(5) {
+            left: 58vw;
+        }
+    }
+}
+
+p {
+    margin: 1em;
+}
+
+button,
+select {
+    color: white;
+    cursor: pointer;
+}
+
+button.setting {
+    background: var(--grass-color);
+    border: solid 0.2em transparent;
+    border-radius: 0.5em;
+    &:hover {
+        border-color: white;
+    }
+}
+
+select.setting {
+    background: var(--grass-color);
+    border: solid 0.2em transparent;
+    border-radius: 0.5em;
+    &:hover {
+        border-color: white;
+    }
+}
+
+input.mole-checkbox {
+    display: none;
+}
+
+.mole {
+    position: absolute;
+    left: 2.5vw;
+    height: 0;
+    border-radius: 50% 50% 0 0;
+    background: var(--mole-color);
+    transition: ease height 300ms;
+    z-index: 0;
+}
+
+.ground {
+    position: fixed;
+    background: var(--mole-color);
+    display: grid;
+    place-items: center;
+    place-content: center;
+    z-index: 0;
+}
+
+.description {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    text-align: center;
+    z-index: 1;
+}
+
+.playing.score,
+.playing.timer,
+.result.high-score,
+#go-to-a-home {
+    --size: 4rem;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: var(--size);
+    height: var(--size);
+    background: var(--mole-color);
+}
+
+.playing.score,
+#go-to-a-home {
+    right: 0;
+    border-radius: 0 0 0 100%;
+}
+
+.playing.timer,
+.result.high-score {
+    left: 0;
+    border-radius: 0 0 100% 0;
+}
+
+.result.high-score {
+    --size: 7rem;
+    width: var(--size);
+    height: var(--size);
+}
+
+.result:has(#return-button) {
+    display: flex;
+    justify-content: center;
+    & #return-button {
+        background: var(--mole-color);
+        border: solid 0.2em transparent;
+        border-radius: 0.5em;
+        &:hover {
+            border-color: white;
+        }
+    }
+}
+
+#setting-checkbox {
+    display: none;
+}
+
+#setting {
+    --f-s: 3rem;
+    position: fixed;
+    top: calc(-100vh + var(--f-s));
+    left: calc(100vw - var(--f-s));
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0 0 0 var(--f-s);
+    background: var(--mole-color);
+    transition: ease top 500ms, ease left 500ms, ease border-radius 500ms;
+    z-index: 2;
+    & #setting-button {
+        position: absolute;
+        bottom: 0;
+        left: 0.5em;
+        background: none;
+        border: none;
+        &::before {
+            content: "\2699";
+            font-size: 3rem;
+            color: var(--grass-color);
+        }
+    }
+    &:has(#setting-checkbox:checked) {
+        top: 0;
+        left: 0;
+        border-radius: 0;
+        & #setting-button {
+            &::before {
+                content: "\26CC";
+            }
+        }
+    }
+    &:has(#setting-checkbox:not(:checked)) {
+        & button.setting {
+            display: none;
+        }
+    }
+}
+
+#mole-key-change {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--grass-color);
+}
+
+#go-to-a-home {
+    position: absolute;
+    top: -1rem;
+    font-size: 3rem;
+    text-align: right;
+    text-decoration: none;
+    background: var(--grass-color);
+    border: none;
+    color: var(--mole-color);
+    &::before {
+        content: "\2302";
+    }
+}
