@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="色を覚え、指定された色の場所を答えるゲームです。">
+    <meta name="keywords" content="ゲーム,脳トレ,記憶力,色,無料,Flash Color">
+
+    <meta property="og:site_name" content="Pond Pastel">
+    <meta property="og:title" content="Flash Color - Pond Pastel">
+    <meta property="og:description" content="色を覚え、指定された色の場所を答えるゲームです。">
+    <meta property="og:url" content="https://pond-pastel.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://pond-pastel.github.io/image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@pond_pastel">
+    <meta name="twitter:title" content="Flash Color - Pond Pastel">
+    <meta name="twitter:description" content="色を覚え、指定された色の場所を答えるゲームです。">
+    <meta name="twitter:image" content="https://pond-pastel.github.io/image.png">
+
+    <meta name="robots" content="index, follow">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Pond Pastel",
+        "url": "https://pond-pastel.github.io/"
+    }
+    </script>
+    <title>無料で遊べるゲーム 「Flash Color」</title>
+    <link rel="stylesheet" href="flash_color.css">
+</head>
+<body>
+    <!--Ver.1.1.0-->
+    <script src="flash_color.js"></script>
+    <div id="timer-bar"></div>
+    <div id="color-area"></div>
+    <div class="before-starting">
+        <div class="center">
+            <button id="rule">ルール説明</button>
+        </div>
+        <div class="center high-score"></div>
+        <div class="center">
+            <button id="start-button">Start</button>
+        </div>
+    </div>
+    <div class="playing" style="display: none;">
+        <div class="center" id="haert"></div>
+        <div class="remember">
+            <div class="center">覚えて!</div>
+        </div>
+        <div class="response" style="display: none;">
+            <div class="flex-center">
+                <div id="answering-color"></div>だった場所を<span class="tap-or-click"></span>!
+            </div>
+            <div class="center">
+                <button id="zero-button">なし</button>
+            </div>
+        </div>
+        <div class="end">
+            <div class="flex-center">
+                <button id="end-button"></button>
+            </div>
+        </div>
+    </div>
+    <div class="result" style="display: none;">
+        <h1 class="center">Game Over</h1>
+        <div class="flex-center">
+            Score: <span id="score"></span>
+        </div>
+        <div class="center high-score"></div>
+        <div class="center">
+            <button id="return-button">戻る</button>
+        </div>
+    </div>
+</body>
+</html>
