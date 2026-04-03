@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="難易度によってモグラの出現時間が変わるモグラ叩きです。">
+    <meta name="keywords" content="モグラ叩き,ゲーム,無料,広告なし">
+
+    <meta property="og:site_name" content="Pond Pastel">
+    <meta property="og:title" content="モグラ叩き - Pond Pastel">
+    <meta property="og:description" content="難易度によってモグラの出現時間が変わるモグラ叩きです。">
+    <meta property="og:url" content="https://pond-pastel.github.io/whack_a_mole/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://pond-pastel.github.io/image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@pond_pastel">
+    <meta name="twitter:title" content="モグラ叩き - Pond Pastel">
+    <meta name="twitter:description" content="難易度によってモグラの出現時間が変わるモグラ叩きです。">
+    <meta name="twitter:image" content="https://pond-pastel.github.io/image.png">
+
+    <meta name="robots" content="index, follow">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "モグラ叩き - Pond Pastel",
+        "url": "https://pond-pastel.github.io/whack_a_mole/whack_a_mole.html",
+        "applicationCategory": "Utility",
+        "operatingSystem": "All",
+        "description": "難易度によってモグラの出現時間が変わるモグラ叩きです。",
+        "creator": {
+            "@type": "Person",
+            "name": "Pond Pastel"
+        },
+        "datePublished": "2026-01-05",
+        "dateModified": "2026-04-03",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Pond Pastel",
+            "url": "https://pond-pastel.github.io/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pond-pastel.github.io/logo.png"
+            }
+        },
+        "image": "https://pond-pastel.github.io/image.png",
+        "browserRequirements": "JavaScript対応ブラウザ",
+        "inLanguage": "ja"
+    }
+    </script>
+    <title>無料で遊べるモグラ叩き - Pond Pastel</title>
+    <link rel="icon" href="https://pond-pastel.github.io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="whack_a_mole.css">
+</head>
+<body>
+    <!--Ver.1.1.0-->
+    <script src="whack_a_mole.js"></script>
+    <div class="before-starting" id="setting">
+        <input type="checkbox" id="setting-checkbox">
+        <button id="setting-button"></button>
+        <a href="https://pond-pastel.github.io/home.html" id="go-to-a-home" title="pond-pastelの作品一覧へ"></a>
+        <p>
+            <select class="setting" id="difficulty">
+                <option value="easy">簡単</option>
+                <option value="normal" selected>普通</option>
+                <option value="hard">難しい</option>
+            </select>
+        </p>
+        <p>
+            <button class="setting keyboard" id="mole-key-change-button">モグラを叩くときのキーを変更する</button>
+        </p>
+        <div id="mole-key-change" style="display: none;"></div>
+    </div>
+    <div class="before-starting">
+        <div class="description">モグラを叩いてスタート</div>
+    </div>
+    <div class="playing" id="xmark-group" style="display: none;"></div>
+    <div class="before-starting playing" id="mole-group"></div>
+    <div class="playing result score" style="display: none;"></div>
+    <div class="playing timer" style="display: none;"></div>
+    <div class="before-starting result high-score"></div>
+    <div class="result" style="display: none;">
+        <button id="return-button">おわる</button>
+    </div>
+</body>
+</html>
